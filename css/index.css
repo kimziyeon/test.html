@@ -1,0 +1,91 @@
+@import url(./reset.css);
+
+:root{
+    --page-width:1536px;
+}
+
+
+
+header{
+    width:var(--page-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+header > h1{}
+
+header > h1 > a{
+    padding: 0 20px;
+}
+
+header > nav{}
+header > nav > a{}
+
+header > div{}
+header > div > a{}
+
+
+
+
+main{
+    width:var(--page-width);
+    margin: 0 auto;
+}
+.spot{
+    position: relative;
+}
+.spot > img{
+    width: 100%;
+}
+.spot > figcaption{
+    position: absolute;
+    left:0; top:0;
+    width: 100%; /*앱솔루트로 영역을 잃음 부모의 크기를 명령*/
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*문구 2개의 방향을 세로로 정렬*/
+    color: #5E452D; /*밑에 자식 폰트에도 상속됨*/
+}
+
+.spot > figcaption > b{
+    text-align: center;
+    font-size: 3.5rem; /*52px이지만 %값을 명령 
+    html최상위에서 정해놓은 16px 사이즈에 4를 곱하면 64px*/
+   /*em은 바로 상위 태그의 크기*/
+   /*디바이스 사이즈가 달라지므로
+   최상위 사이즈가 달라지면 아래 rem사이즈도 바뀌는 형식*/
+   line-height: 1;
+   animation: txt 1s 0.5s forwards; /*두 텍스트 0.5초 딜레이*/
+   
+   transform: translateY(100%); /* 딜레이 전 안보이게 */
+   opacity: 0;
+}
+
+
+.spot > figcaption > p{
+    margin-top:20px;
+    animation: txt 1s forwards;
+}
+
+
+@keyframes txt {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;}
+
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+footer{
+    width:var(--page-width);
+}
